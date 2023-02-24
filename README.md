@@ -6,3 +6,5 @@ Gerardo Diosdado Escalera
 Hector Andres Gutierrez Esparza
 
 Abraham Melgoza de la Torre
+
+Adrian Alonso Arambula
