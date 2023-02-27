@@ -19,4 +19,6 @@ José Luis Ornelas Valadez
 
 Jesus Ruvalcaba Lozano
 
-Ahylin Aketzali Castorena Rodriguez
+Ahylin Aketzali Castorena Rodriguez 
+
+Leonardo Daniel Gutierrez Flores :)
