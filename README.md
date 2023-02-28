@@ -46,3 +46,5 @@ Einar Naim Aguilar Santana
 Sebastian Rodrigurez Hernandez
 
 Jazmin Martinez Chavez
+
+Ricardo Daniel Alvarez Martinez
