@@ -65,6 +65,6 @@ Yael Alan Martinez Orozco
 
 Estefeen Sandoval Rodriguez
 
-Frida Ximena Escamilla Ramirez
+Frida Ximena Escamilla Ramirez :)
 
 Cesar Reyes Torres
