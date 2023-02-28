@@ -38,3 +38,17 @@ Diego Emmanuel Macias Muñoz
 Andres Heredia Ballin
 
 Aaron Antonio Raygoza Macias
+
+Axel Daniel Macias Heredia
+
+Daniel Alejandro Barbosa Ayala
+
+Einar Naim Aguilar Santana
+
+Sebastian Rodrigurez Hernandez
+
+Jazmin Martinez Chavez
+
+Ricardo Daniel Alvarez Martinez
+
+Emilio Alejandro Garcia Del Alto
