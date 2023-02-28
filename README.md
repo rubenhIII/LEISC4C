@@ -42,3 +42,5 @@ Axel Daniel Macias Heredia
 Daniel Alejandro Barbosa Ayala
 
 Einar Naim Aguilar Santana
+
+Sebastian Rodrigurez Hernandez
