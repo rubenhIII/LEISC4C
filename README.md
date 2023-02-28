@@ -67,3 +67,6 @@ Estefeen Sandoval Rodriguez
 
 César Reyes Torres
 
+Frida Ximena Escamilla Ramirez :)
+
+Cesar Reyes Torres
