@@ -38,3 +38,5 @@ Andres Heredia Ballin
 Aaron Antonio Raygoza Macias
 
 Axel Daniel Macias Heredia
+
+Daniel Alejandro Barbosa Ayala
