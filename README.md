@@ -64,3 +64,4 @@ Juan Rodolfo Aranda Cisneros
 Yael Alan Martinez Orozco 
 
 Estefeen Sandoval Rodriguez
+Frida Ximena Escamilla Ramirez
