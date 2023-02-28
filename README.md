@@ -44,3 +44,5 @@ Daniel Alejandro Barbosa Ayala
 Einar Naim Aguilar Santana
 
 Sebastian Rodrigurez Hernandez
+
+Jazmin Martinez Chavez
