@@ -74,3 +74,5 @@ Cesar Reyes Torres
 Asly Lizbeth Salinas Morales
 
 Valdivia Padilla Sergio Armando
+
+Zúñiga Delgadillo Zuriel Said
