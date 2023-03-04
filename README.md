@@ -52,3 +52,29 @@ Jazmin Martinez Chavez
 Ricardo Daniel Alvarez Martinez
 
 Emilio Alejandro Garcia Del Alto
+
+Gerardo Castañeda Martin
+ 
+Fabiel Ortega Ruiz
+ 
+Emiliano Jahir Espinoza Herrera 
+ 
+Juan Rodolfo Aranda Cisneros
+
+Yael Alan Martinez Orozco 
+
+Estefeen Sandoval Rodriguez
+
+César Reyes Torres
+
+Frida Ximena Escamilla Ramirez :)
+
+Cesar Reyes Torres
+
+Asly Lizbeth Salinas Morales
+
+Valdivia Padilla Sergio Armando
+
+Zúñiga Delgadillo Zuriel Said
+
+Michelle Monserrat Gomez Lopez 
