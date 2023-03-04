@@ -14,7 +14,7 @@ COMMENT !
     
 .DATA
     ;Segmento de Datos
-    vector DW 05h, 12h, 02h, 35h ;Vector de n elementos desordenados
+    vector DB 05h, 12h, 02h, 35h ;Vector de n elementos desordenados
     size EQU ($-vector)-1 ;Tamaño del vector
 .CODE
     ;Segmento de Codigo
