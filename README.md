@@ -78,3 +78,5 @@ Valdivia Padilla Sergio Armando
 Zúñiga Delgadillo Zuriel Said
 
 Michelle Monserrat Gomez Lopez 
+
+Erik Omar Alba Dávila
