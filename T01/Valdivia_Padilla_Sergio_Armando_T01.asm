@@ -31,12 +31,12 @@ MOV ES, AX
 
 ;CODIGO
 
-    MOV CX, 9  ;Determinamos el tamaño del ciclo dependiendo del tamaño del arreglo
+    MOV CX, 9  ;Determinamos el tamaÃ±o del ciclo dependiendo del tamaÃ±o del arreglo
     MOV SI, 0  ;Limpiamos los Registros                                                                    
     MOV DI, 0
         
     CICLO:
-        PUSH CX ;Colocamos en la pila el tamaño del arreglo
+        PUSH CX ;Colocamos en la pila el tamaÃ±o del arreglo
         LEA SI, VECTOR ;Pasa la dirreccion efectiva del arreglo a SI
         MOV DI, SI ;Pasamos la dirreccion anterior a DI
        
@@ -49,13 +49,13 @@ MOV ES, AX
         
     CAMBIO: 
         MOV AH, [DI] ;Se mueve la parte alta de Ax a Di
-        MOV [DI], AL ;Se cambia la posición del segundo por el primero
-        MOV [SI], AH ;Se cambia la posición del primero por el segundo
+        MOV [DI], AL ;Se cambia la posiciÃ³n del segundo por el primero
+        MOV [SI], AH ;Se cambia la posiciÃ³n del primero por el segundo
     
     MENOR:
         INC SI ;Se incrementa el valor de SI
         LOOP CICLO2 
-        POP CX   ;Se saca el tamaño del arreglo y se lo metemos en cx 
+        POP CX   ;Se saca el tamaÃ±o del arreglo y se lo metemos en cx 
         LOOP CICLO  ;Creamos un ciclo anidado para ir comparando todas las posiciones
         
              
