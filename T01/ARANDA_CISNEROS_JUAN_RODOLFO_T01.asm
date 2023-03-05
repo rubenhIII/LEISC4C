@@ -1,3 +1,6 @@
+;Autor: Juan Rodolfo Aranda Cisneros
+;Fecha: 05/03/2023
+
 
 DATOS SEGMENT
     ; VARIABLES
