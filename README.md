@@ -80,3 +80,5 @@ Zúñiga Delgadillo Zuriel Said
 Michelle Monserrat Gomez Lopez 
 
 Erik Omar Alba Dávila
+
+Diego Perez Salas
