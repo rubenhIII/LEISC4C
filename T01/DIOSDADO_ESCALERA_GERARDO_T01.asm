@@ -48,14 +48,8 @@ COMMENT !
    no_cambio:
       INC DX; Incremento del iterador interno
       JMP interior; Se continua con el ciclo interno
-      ; -------------------------
-      ; -------Fin Codigo-------
-      ; -------------------------
 
-      ; Finalizacion de Segmento de Codigo
    fin:
-      MOV AX, 4C00h
-      INT 21h
 
    MAIN ENDP
    ; -------Procedimientos-----
