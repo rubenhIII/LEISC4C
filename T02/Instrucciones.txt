@@ -1,0 +1,4 @@
+#Tarea 2
+#Realizar la implementacion del algoritmo de Verificacion de Redundancia 
+#Ciclica.
+
