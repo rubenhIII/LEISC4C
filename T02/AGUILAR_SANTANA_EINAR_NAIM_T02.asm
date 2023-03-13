@@ -16,7 +16,7 @@ COMMENT !
     ;Segmento de Datos
     MSG DW 1101001110110000b ;Mensaje ocupando 16 bits - con 3 bits libres 
     MSG2 DW 1101001110110000b ;Mensaje ocupando 16 bits servira como respaldo del mensaje para la verificacion dos 
-    POL DW 1011000000000000b ;Polinomio divisor ocupando   
+    POL DW 1011000000000000b ;Polinomio divisor   
      
     VERIFICACION_DOS DW 0 ;bandera que se activara cuando la haya concluido la verificacion uno              
         
