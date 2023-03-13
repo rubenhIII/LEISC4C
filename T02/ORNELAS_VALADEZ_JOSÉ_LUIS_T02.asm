@@ -7,16 +7,12 @@ TITLE "METODO DE VERIFICACION DE REDUNDANCIA - CICLICA"
 .STACK 100h  
 .DATA
     
-     ;variables     
-    Message       DW 1101001110110000b    ;16 bits   ultimos tres poli.
-    
-    MessageOrig   DW 0h                   ;Almacena el Mensaje Original
-    
-    Polynomial    DW 1011000000000000b    ;16 bits
-    
-    PolynomResult DW 0h                   ;Almacena la codificacion obtenida
-    
-    moves         DB 0h                   ;Auxiliar para obtener numero de desplazamientos
+    ;Variables     
+    Mensaje       DW 1101001110110000b    ;16 bits   ultimos tres poli.
+    MensajeUnic   DW 0h                   ;Almacena el Mensaje Original
+    Polinomio     DW 1011000000000000b    ;16 bits
+    PolinomioResultado DW 0h              ;Almacena la codificacion obtenida
+    movidas          DB 0h                   ;Auxiliar para obtener numero de desplazamientos
 
 
 ;--------------------------------------------------------------------------------------------------------------------------------------------------------------------   
@@ -38,7 +34,6 @@ MAIN PROC                                 ;Procedimiento Principal
         JMP MVRC-algoritmo                ;LLAMA A LA FUNCION MVRC-ALGORITMO
         
 MAIN ENDP                                 ;TERMINA EL MAIN      
-
 END MAIN                                  ;TERMINA EL PROGRAMA
                              
 ;--------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -56,14 +51,13 @@ MVRC-algoritmo:
 cambio:  
              
         MOV SI,0h                         ;MUEVE EL REGISTRO SI A 0H
-        MOV BX,Mensaje                    ;MUEVE EL REGISTRO BX A LA ETIQUETA MENSAJE
-                                                                                                 
+        MOV BX,Mensaje                    ;MUEVE EL REGISTRO BX A LA ETIQUETA MENSAJE                                                                           
         LOOP desplasamiento               ;UN CICLO EN DESPLAZAMIENTO 
         
 ;--------------------------------------------------------------------------------------------------------------------------------------------------------------------    
 ayuda:   
-        MOV CL,moves                      ;MUEVE EL REGISTRO CL A LA ETIQUETA MOVIMIENTOS
-        MOV moves,0h                      ;MUEVE MOVIMIENTOS A 0H
+        MOV CL,movidas                    ;MUEVE EL REGISTRO CL A LA ETIQUETA MOVIMIENTOS
+        MOV movidas,0h                      ;MUEVE MOVIMIENTOS A 0H
         
         MOV Polinomio,DX                  ;MUEVE POLINOMIO AL REGISTRO DX
         SHR Polinomio,CL                  ;DESPLAZA EL OPERADOR DE LA IZQUIEDA DE LA ETIQUETA POLINOMIO A REGISTRO CL
@@ -80,7 +74,7 @@ desplasamiento:
         JC ayuda                          ;SALTA LA CONDICIONAL AYUDA
                   
         INC SI                            ;INCREMENTA AL REGISTRO SI
-        INC moves                         ;INCREMENTA A MOVIMIENTOS           
+        INC movidas                       ;INCREMENTA A MOVIMIENTOS           
         JMP desplasamiento                ;SALTA HACIA LA FUNCION DESPALSAMIENTO
 
 ;--------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -108,7 +102,6 @@ verificacion:
 salida:
         .exit                             ;SALE 
                      
-        
 ;--------------------------------------------------------------------------------------------------------------------------------------------------------------------       
 error:  
         AND Mensaje,0h                    ;CONJUNCION DE OPERADORES EN MENSAJE
