@@ -65,10 +65,8 @@ COMMENT !
             
         SEGUNDA_VERIFICACION:                       
                        
-            MOV AX,MSG ;Mueve lo que queda en MSG al registro AX
-            ADD MSG2,AX ;Suma lo del registro AX a 
-            MOV AX,MSG2 ;MSG2 se pasa al registro AX 
-            MOV MSG,AX ;El contenido de AX se coloca en MSG
+            MOV AX,MSG2 ;Mueve el contenido de MSG2 al registro AX
+            ADD MSG,AX ;Suma el contenido de AX a MSG
             MOV CX,13 ;Contador se reinicia
             MOV BX,POL ;Contenido de POL se coloca en el registro BX
             MOV DX,1000000000000000b ;Se reinicia el contenido de DX 
