@@ -17,7 +17,7 @@ usar la verificacion de redundancia ciclica
 
     msg DW  1101001110110000b
     dvi DW  1011000000000000b; el divisor del mismo tamaño que el mensaje
-    CRC DW  1000000000000000b
+    crc DW  1000000000000000b
 
 
 .CODE
@@ -33,7 +33,7 @@ usar la verificacion de redundancia ciclica
         MOV AX,msg
         MOV BX,dvi
         MOV CX,0 ;sera nuestro contador
-        MOV DX,CRC; esta cantidad actuara como nuestro verificador
+        MOV DX,crc; esta cantidad actuara como nuestro verificador
 
         enma:
 
