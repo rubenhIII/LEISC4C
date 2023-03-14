@@ -37,7 +37,7 @@ COMMENT !
             MOV SI,offset vec   ;Movemos la direccion de memoria del primer elemento del vector al registro de origen
             MOV DI,SI   ;Movemos la misma direccion de memoria al registro de destino
             
-        for2:   ;Etiqueta para realizar el segundo ciclo
+        for2:   ;Etiqueta para realizar el segundo for
             INC DI  ;Incrementamos el indice de origen para tener la direccion del segundo elemento del vector
             MOV AL,[SI] ;Movemos el contenido del primer elemento del vector al registro AL
             CMP AL,[DI] ;Comparamos el contedido del primer elemento con el segundo elemnto         
