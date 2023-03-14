@@ -48,9 +48,9 @@ COMMENT !
         LOOP ciclo            
 
         CMP DX, 0              
-        JE exit
+        JE final
         
-    exit:
+    final:
         
         
    MAIN ENDP
