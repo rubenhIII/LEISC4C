@@ -26,7 +26,7 @@ COMMENT !
         MOV DS,AX 
         ;-------------------------
 ;-------Codigo-----------
-        MOV SI,1 ;El registro SI servira como multiplicador y contador ascendente para poner un limite al factorial iniciara en 1   
+        MOV SI,1 ;El registro SI servira como multiplicador y contador ascendente para poner un limite al factorial, iniciara en 1   
         MOV res,SI ;Se le pasara a la variable res el valor de SI que es 1 
         CALL FACTORIAL ;Se le llama a procedimiento FACTORIAL   
         MOV AX, 04CH ;Se coloca 04CH en el registro AX
