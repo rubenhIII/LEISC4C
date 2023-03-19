@@ -36,6 +36,7 @@ COMMENT !
    
 ;-------Procedimientos-----
     FACTORIAL PROC
+    
         MOV AX,res ;Guarda el valor de res en el registro AX  
         MOV BX,SI ;Guarda el valor de SI en el registro BX
         MUL BX ;Se realiza la multiplicacion de ambos registros 
@@ -43,9 +44,10 @@ COMMENT !
         INC SI ;Incrementa el contador SI
         CMP SI,NUM ;Compara si el contador equivale al numero que se le sacara factorial  
         JE SALIR ;Si coincide la comparacion anterior saltara a SALIR     
-        CALL FACTORIAL ;Vuelve a llamar a procedimiento FACTORIAL debido a la recursividad
+        CALL FACTORIAL ;Vuelve a llamar a procedimiento FACTORIAL debido a la recursividad     
         SALIR:
-        RET;Se sale del procedimiento    
+            RET ;Se sale del procedimiento 
+        
     FACTORIAL ENDP
     
 
