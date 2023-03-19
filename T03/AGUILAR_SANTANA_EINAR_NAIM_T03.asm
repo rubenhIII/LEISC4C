@@ -2,7 +2,7 @@ TITLE "Factorial de un numero"
 
 ;Autor: Einar Naim Aguilar Santana
 ;Fecha: 18/03/2023
-;Descripcion del Programa: Programa que realiza el factorial un numero con el uso de procedimiento y recursividad
+;Descripcion del Programa: Programa que realiza el factorial un numero con el uso de un procedimiento y recursividad
 COMMENT !
 --------------------------
 !
