@@ -42,9 +42,10 @@ COMMENT !
         MUL BX ;Se realiza la multiplicacion de ambos registros 
         ADD res,AX ;Se suma el contenido del registro AX a res 
         INC SI ;Incrementa el contador SI
-        CMP SI,NUM ;Compara si el contador equivale al numero que se le sacara factorial  
-        JE SALIR ;Si coincide la comparacion anterior saltara a SALIR     
+        CMP SI,NUM ;Compara el contador y el numero que se le sacara factorial  
+        JE SALIR ;Si coinciden ambos numero se saltara a la etiqueta SALIR    
         CALL FACTORIAL ;Vuelve a llamar a procedimiento FACTORIAL debido a la recursividad     
+        
         SALIR:
             RET ;Se sale del procedimiento 
         
