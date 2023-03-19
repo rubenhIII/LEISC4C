@@ -15,7 +15,7 @@ COMMENT !
 .DATA
     ;Segmento de Datos 
     num DW 6 ;Variable que guarda el numero al que se le sacara el factorial
-    res DW 0 ;Variable en la que se guardara el resultado del factorial
+    fac DW 0 ;Variable en la que se guardara el resultado del factorial
     
 .CODE
     ;Segmento de Codigo
@@ -27,7 +27,7 @@ COMMENT !
         ;-------------------------
 ;-------Codigo-----------
         MOV SI,1 ;El registro SI servira como multiplicador y contador ascendente para poner un limite al factorial, iniciara en 1   
-        MOV res,SI ;Se le pasara a la variable res el valor de SI que es 1 
+        MOV fac,SI ;Se le pasara a la variable fac el valor de SI que es 1 
         CALL FACTORIAL ;Se le llama a procedimiento FACTORIAL   
         MOV AX, 04CH ;Se coloca 04CH en el registro AX
         INT 21H ;Interrupcion que termina la ejecucion del programa
@@ -37,12 +37,12 @@ COMMENT !
 ;-------Procedimientos-----
     FACTORIAL PROC
     
-        MOV AX,res ;Guarda el valor de res en el registro AX  
+        MOV AX,fac ;Guarda el valor de fac en el registro AX  
         MOV BX,SI ;Guarda el valor de SI en el registro BX
         MUL BX ;Se realiza la multiplicacion de ambos registros 
-        ADD res,AX ;Se suma el contenido del registro AX a res 
+        ADD fac,AX ;Se suma el contenido del registro AX a fac 
         INC SI ;Incrementa el contador SI
-        CMP SI,NUM ;Compara el contador y el numero al que se le sacara el factorial  
+        CMP SI,num ;Compara el contador y el numero al que se le sacara el factorial  
         JE SALIR ;Si coinciden ambos numero se saltara a la etiqueta SALIR    
         CALL FACTORIAL ;Vuelve a llamar a procedimiento FACTORIAL debido a la recursividad     
         
