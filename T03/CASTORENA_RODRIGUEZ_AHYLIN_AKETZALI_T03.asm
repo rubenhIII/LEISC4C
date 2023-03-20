@@ -45,18 +45,18 @@ COMMENT !
 
  factori PROC
       
-      MUL CX
-      MOV factorial,AX 
-      DEC CX
+      MUL CX ; aqui se hace la operacion de multiplicar
+      MOV factorial,AX ; mover lo que tiene el registro AX a la variable factorial
+      DEC CX ; decrementa el contador
       
-      CMP  CX,numero
-      JLE  eti
-      CALL factori     
+      CMP  CX,numero ;compara si es igual a nuestro numero
+      JLE  eti ;salta a la etiqueta eti
+      CALL factori ; llama a factori     
       
       
  eti:   
-     MOV AX,factorial
-     RET 
+     MOV AX,factorial ;Movemos al registro AX el resultado de la multiplicacion
+     RET ;retorna
     
 ;fibonacci ENDP                
                            
