@@ -1,9 +1,13 @@
-; Este programa calcula el factorial de un número fijo (5 en este caso)
+;JUAN RODOLFO ARANDA CISNEROS
+;FACTORIAL DE UN NUMERO
+
+
+; Este programa calcula el factorial de un nÃºmero fijo (5 en este caso)
 ; y muestra el resultado en la pantalla.
 
 org 100h
 
-mov cx, 5      ; número fijo cuyo factorial se quiere calcular
+mov cx, 5      ; nÃºmero fijo cuyo factorial se quiere calcular
 mov bx, cx     ; se guarda el valor original en bx
 
 mov ax, 1      ; se inicializa el acumulador con 1
@@ -19,21 +23,21 @@ mov bx, 10     ; se divide el resultado por 10 para poder imprimirlo
 loop2:
 xor dx, dx     ; se limpia dx
 div bx         ; se divide ax entre 10
-push dx        ; se guarda el resto (dígito menos significativo) en la pila
+push dx        ; se guarda el resto (dÃ­gito menos significativo) en la pila
 cmp ax, 0      ; se compara el cociente con cero
 jne loop2      ; si no ha llegado a cero, se vuelve al loop
 
 mov ah, 2      ; se prepara para imprimir el resultado
-pop dx         ; se saca el último dígito de la pila
+pop dx         ; se saca el Ãºltimo dÃ­gito de la pila
 add dl, 48     ; se convierte a ASCII
-int 21h        ; se imprime el dígito
+int 21h        ; se imprime el dÃ­gito
 
 loop3:
 mov ah, 2      ; se prepara para imprimir el resultado
-pop dx         ; se saca el siguiente dígito de la pila
+pop dx         ; se saca el siguiente dÃ­gito de la pila
 add dl, 48     ; se convierte a ASCII
-int 21h        ; se imprime el dígito
-loop loop3     ; se repite hasta que se hayan impreso todos los dígitos
+int 21h        ; se imprime el dÃ­gito
+loop loop3     ; se repite hasta que se hayan impreso todos los dÃ­gitos
 
 mov ah, 4ch    ; se sale del programa
 int 21h
