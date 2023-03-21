@@ -1,0 +1,20 @@
+#Instalar las precondiciones para programar usando NASM en 32 bits.
+
+sudo apt-get install nasm
+sudo apt-get install libc6-dev-i386
+
+#Verificar si no esta obsoleto
+sudo apt-get install ia32-libs
+#Si el paquete anterior está obsoleto utilizar
+sudo apt-get install lib32z1
+
+#Comando para ensamblar programa
+nasm -f elf32 NombreDelPrograma.asm
+#Link del objeto con ejecutable
+#Al utilizar GCC como herramienta de enlace, la etiqueta principal
+#del programa debe llamarse main
+gcc -m32 NombreDelObjeto.o -o NombreDelEjecutable -no-pie
+
+#Las instrucciones anteriores, en caso de no arrojar algún error
+#durante el ensamblado o el link, deberá generar un archivo ejecutable
+./NombreDelEjecutable
