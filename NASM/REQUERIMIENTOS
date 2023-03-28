@@ -18,3 +18,54 @@ gcc -m32 NombreDelObjeto.o -o NombreDelEjecutable -no-pie
 #Las instrucciones anteriores, en caso de no arrojar algún error
 #durante el ensamblado o el link, deberá generar un archivo ejecutable
 ./NombreDelEjecutable
+
+#Debugging con GDB
+#Instalar GDB. GDB es un depuradorque puede trabajar por linea de comandos.
+sudo apt-get install gdb
+
+#Ensamblar programa. Opcionalmente se pueden agregar símbolos de depuración.
+#Las banderas -g indican agregar los símbolos y -F dwarf indican el formato de los mismos.
+
+nasm -f elf32 archivo.asm -g -F dwarf
+
+#Enlazar el objeto generado por el ensamblador. Recordar, su puede usar ld o gcc. En gcc por defecto
+#busca la etiqueta principal llamada main por lo que esta debe ser incluida e indicada como global
+#dentro del código de ensamblador.
+
+gcc -m32 archivo.o -o archivoEjecutable -no-pie
+
+#Abrir el ejecutable con gdb.
+
+gdb archivoEjecutable
+
+#En el promt de gbd podemos indcar la arquictectura. En este caso 32 bits.
+
+set architecture i386
+
+#Para 64 bits
+
+set architecture i386:x86-64
+
+#Establecer los breakpoints. Puede ser una dirección o una etiqueta. Recomiendo usar una etiqueta.
+
+break etiqueta
+
+#Ejecutar programa hasta el primer breakpoint.
+
+run
+
+#Registros
+
+info registers
+
+#Imprimir contenido de direcciones de memoria
+
+#Flotante 32 bits
+x/f &variable 
+
+#Byte en decimal
+x/bd &variable
+
+#Word en decimal
+x/wd &variable
+
