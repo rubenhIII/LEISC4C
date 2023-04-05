@@ -1,1 +1,14 @@
 #Carpeta para archivos ejecutables
+#Formato de entrega de archivo:
+
+APELLIDOPATERNO_APELLIDOMATERNO_NOMBRES_T04
+
+#Variables dentro de su programa:
+#Resultado:
+
+senx DD
+
+#La operación sobre la cual debe realizarse la función es 0.7853.
+#Recordar que la aproximación por series de Taylor de las funciones
+#Trigonométricas lo hace de acuerdo a los grados en radianes.
+
