@@ -84,7 +84,7 @@ section .text
         ;finit             ; inicializa el coprocesador FPU
         ; fstp qword [esp]  ; guarda en la pila
         ; mov eax, 0        ; indica el valor de retorno para printf
-        ; mov ebx, msg      ; pasa la cadena de formato a printf
+        ; mov ebx, msg      ; pasa la cadena a printf
         ; push msg
         ; call printf       ; imprime el valor en decimal
         jmp ext
