@@ -77,11 +77,11 @@ section .text
         ;ciclo tipo (n;n>=0;n--)
         mov eax,[n]
         cmp eax,edx
-        ja  print
+        ja  print       ;Salida definitiva
 
         inc eax
         mov [n],eax
-        jmp sumatoria ;Salida definitiva
+        jmp sumatoria   ;Ciclo
 
     print:
         ;****
