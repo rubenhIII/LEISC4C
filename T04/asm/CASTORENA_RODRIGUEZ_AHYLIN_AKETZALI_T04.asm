@@ -1,4 +1,5 @@
-;ahylin aketzali castorena rodriguez
+;ahylin aketzali castorena rodriguez y Michelle Monserrat Gomez Lopez 
+;esperemos que no haya ningun problema pero haberlo hecho en pareja :(
 GLOBAL main
 section .text
     finit
