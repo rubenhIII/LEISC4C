@@ -101,9 +101,9 @@ section .text
 
 section .data
     senx DD 0.0 
-    n DD 4
+    n DD 3 
     x DD 0.785398
-    powaux DD 0.05
+    powaux DD 0.08 
     pow1 DD 1.0
     pow2 DD 1
     factorial DD 1
