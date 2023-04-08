@@ -1,7 +1,8 @@
 GLOBAL main
 ;Autor: Einar Naim Aguilar Santana
 ;Fecha: 07/03/2023
-;Descripcion del Programa: Este programa realizara la serie de taylor tomando en cuenta a la x como pi/4
+;Descripcion del Programa: Este programa realizara la serie de taylor de "senx" tomando en cuenta a la x como pi/4 
+;                          usando numeros flotantes, potencias y factoriales. 
     
 GLOBAL main
 
