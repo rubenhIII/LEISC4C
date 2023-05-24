@@ -5,13 +5,14 @@ section .data
     output  db "AVILA_RIVERA_MARIANA_COUNT.txt",0 ;archivo de resultados
     letrasMay db 65
     contLoop db 0
-    totalLetras db 0    ;lleva la cuenta del total de letras
+    totalLetras dd 0    ;lleva la cuenta del total de letras
 
     tamBuff equ 2000
-    contLetras db 26 dup(0)  ; SE reservan 26 espacios de memoria de tamaño db
+    contLetras dd 26 dup(0)  ; SE reservan 26 espacios de memoria de tamaño db
                              ; EN el arreglo se  almacenará el conteo de cada letra
     buffDigit dd 0   ;almacena la cadena convertida (numero a cadena)
     string dd "000"  ;guarda la cadena resultante
+    residuo dd 0
 
     ;Para dar formato al archivo:
     nuevaLinea db 10                ; Carácter de nueva línea
@@ -23,6 +24,11 @@ section .bss
 
 section .text
     main:
+        ;Borrar archivo si esta creado
+        mov eax, 10 ; system call 10: para borrar el archivo
+        mov ebx, output ; nombre del archivo a borrar
+        int 0x80
+
         ;Abriendo el archivo de texto
         mov eax, 5    ;Identificador de interrupción (apertura de archivo)
         mov ebx, data ;nombre del archivo
@@ -56,8 +62,8 @@ conteoLetras:
 
     ; Contar letra mayúscula
     sub eax, 'A'
-    inc byte [contLetras + eax]
-    inc byte[totalLetras]
+    inc dword [contLetras + eax]
+    inc dword[totalLetras]
 
     jmp incIndice
 
@@ -70,8 +76,8 @@ checkMin:
 
     ; Contar letra minúscula
     sub eax, 'a'
-    inc byte [contLetras + eax]
-    inc byte[totalLetras]
+    inc dword [contLetras + eax]
+    inc dword[totalLetras]
 
 incIndice:
     inc edi                     ; Incrementar el índice del búfer
@@ -87,8 +93,8 @@ finConteo:
 
 ;///////////////////////////////////////////////////
     
-    mov esi, 0          
-    
+    ;mov esi, 0          
+    mov byte[contLoop],0
     mov eax,5
     mov ebx, output
       mov ecx, 0102o   ; Modo de apertura (2 = O_WRONLY | O_CREAT)
@@ -128,6 +134,7 @@ ptintLoop0:
     mov edx, 1              ; Longitud del dato a escribir
     int 0x80                ; Llamar al sistema operativo
 
+    movzx esi, byte[contLoop]
     mov eax,dword[contLetras+esi]  ; Cargar el valor de totalLetras en EAX
     mov dword[buffDigit], eax
     mov al, byte [buffDigit]
@@ -171,9 +178,10 @@ ptintLoop0:
 
     ; Incrementar el índice y repetir el bucle
     inc byte[letrasMay]
-    inc esi
-    mov [contLoop],esi ; Se actualiza el contador
-    cmp esi, 26            ; Comprobar si hemos alcanzado el final del abecedario
+    inc byte[contLoop]
+    ;inc esi
+    ;mov [contLoop],esi ; Se actualiza el contador
+    cmp byte[contLoop], 26            ; Comprobar si hemos alcanzado el final del abecedario
     je exit                 ; Salir del bucle si es así
 
    jmp printLoop ; Continua en el LOOP
@@ -208,26 +216,23 @@ numToStr:
     add eax, '0'           ; Convertir el cociente a caracter
 
     mov byte[string], al      ; Colocar el caracter en la cadena de salida
-    ;inc ebx               ; Incrementar ebx para avanzar a la siguiente posición
-    mov bl,ah    ;guarda el residuo
+    mov ebx,edx    ;guarda el residuo
+    
 .check_tens:
     cmp ebx, 10            ; Verificar si el número es mayor o igual a 10
     jl .ones_digit        ; Saltar si es menor a 10
 
     xor edx, edx          ; Limpiar el registro edx para la división
-
     mov eax, ebx
     mov ecx, 10           ; Divisor
     div ecx               ; Dividir ebx por 10, el cociente queda en eax
-
     add eax, '0'           ; Convertir el cociente a caracter
 
     mov byte[string+1], al    ; Colocar el caracter en la cadena de salida
-    ;inc ebx               ; Incrementar ebx para avanzar a la siguiente posición
-    mov bl,ah    ;guarda el residuo
+    mov ebx,edx    ;guarda el residuo
 
 .ones_digit:
-    add ebx, '0'           ; Convertir el número en las unidades a caracter
+    add bl, '0'           ; Convertir el número en las unidades a caracter
     mov byte[string+2], bl    ; Colocar el caracter en la cadena de salida
 
 finToString:
