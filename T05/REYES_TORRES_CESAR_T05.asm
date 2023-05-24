@@ -9,8 +9,6 @@
 ; Una vez leido el archivo completo, se crea o se abre un nuevo archivo de texto
 ; y se esciben los resultados en forma de lista (hasta 999 de un mismo caracter).
 
-; NOTA: Si el archivo reslutado no está creado y ejecuta el programa, se creará el archivo sin permisos
-; necesarios para lectura, por lo que se deberan de actualizar para poder observar el contenido escrito.
 
 GLOBAL main
 
@@ -278,12 +276,15 @@ end_read_loop:
     int 0x80                    ; Llamar al sistema
 
     ; Crear archivo de resultados
-    ; Abrir el archivo
     mov eax, 8            ; Código de llamada al sistema "open"
     mov ebx, filename_2   ; Nombre del archivo
-    mov ecx, 2            ; Modo de apertura (2 = O_WRONLY | O_CREAT)
-    mov edx, 644         ; Permisos del archivo
+    mov ecx, 0644o        ; Permisos del archivo
     int 0x80              ; Llamada al sistema
+    ; Abrir archivo de resultados
+    mov eax, 5                  ; Código de la llamada al sistema para abrir el archivo
+    mov ebx, filename_2           ; Nombre del archivo
+    mov ecx, 2                  ; Modo de apertura: solo lectura
+    int 0x80 
 
     mov [filehandle], eax ; Almacenar el descriptor de archivo devuelto
 
@@ -555,6 +556,21 @@ write_file:      ; Escribir listado en el archivo
         mov ecx, buffer_c        
         mov edx, 3    
         int 0x80  
+
+    mov eax, 4         
+        mov ebx, [filehandle]
+        mov ecx, msg_F       
+        mov edx, 3     
+        int 0x80    
+
+        mov eax, [f]
+        call convert_string
+
+        mov eax, 4         
+        mov ebx, [filehandle]
+        mov ecx, buffer_c        
+        mov edx, 3    
+        int 0x80 
 
     mov eax, 4         
         mov ebx, [filehandle]
