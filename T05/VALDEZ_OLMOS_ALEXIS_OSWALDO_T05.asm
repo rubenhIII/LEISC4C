@@ -136,4 +136,4 @@
      ;Comando para ensamblar programa 
      ;nasm -f elf32 VALDEZ_OLMOS_ALEXIS_OSWALDO_T05.asm 
   
-     ;gcc -m32 VALDEZ_OLMOS_ALEXIS_OSWALDO_T05.o -o Ortega_Ruiz_FabielEjec -no-pie
+     ;gcc -m32 VALDEZ_OLMOS_ALEXIS_OSWALDO_T05.o -o Valdez_Olmos -no-pie
